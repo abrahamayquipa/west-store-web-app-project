@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$popping-900: 'Poppins';
+$beish-color: #F2F0F1;
+$beish-hover-color: #E9E9E9;
+$red-color: #FF3333;
+
+:root {
+    --bold-font: #{$popping-900};
+    --beish-color: #{$beish-color};
+    --beish-hover-color: #{$beish-hover-color};
+    --red-color: #{$red-color};
+}
