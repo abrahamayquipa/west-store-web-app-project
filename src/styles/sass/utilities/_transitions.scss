@@ -1,0 +1,23 @@
+@keyframes ul-animation {
+    0% {
+        left: -20em;
+    } 100% {
+        left: 0em;
+    }
+}
+
+@keyframes shadow-window-animation {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes searcher-animation {
+    0% {
+        top: -20em;
+    } 100% {
+        top: 4em;
+    }
+}

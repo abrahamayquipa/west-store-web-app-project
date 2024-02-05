@@ -1,0 +1,76 @@
+.c-navbar-container {
+    width: 100%;
+    background-color: white;
+    box-shadow:black
+}
+
+.c-navbar {
+    background-color: white;
+
+    &__logo {
+        font-size: 1.5rem;
+        letter-spacing: -2px;
+    }
+
+    &__li {
+        padding: 1.3em 2.5em;
+
+        &:hover {
+            background-color: var(--beish-hover-color)
+        }
+    }
+}
+
+.c-ul{
+    &--contracted {
+        position: absolute;
+        top: 0em;
+        left: 0em;
+        width: 65vw;
+        height: 100vh;
+        background-color: var(--beish-color);
+        animation: ul-animation 0.3s ease-in;
+    }
+}
+
+.c-shadow-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    animation: shadow-window-animation 0.8s ease-out;
+}
+
+input {
+    width: 60%;
+}
+
+.c-searcher {
+    padding: 1em 1.5em;
+    background-color: white;
+    border-radius: 4em;
+
+
+    &__container {
+        position: absolute;
+        top: 4em;
+        width: 100vw;
+        background-color: var(--beish-color);
+        animation: searcher-animation 0.8s ease-in-out;
+    }
+
+    &__input {
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+}
+
+.c-404 {
+    height: 85vh;
+    text-align: center;
+}
