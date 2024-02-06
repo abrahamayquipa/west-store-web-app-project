@@ -1,4 +1,6 @@
 .c-navbar-container {
+    position: fixed;
+    top: 0em;
     width: 100%;
     background-color: white;
     box-shadow:black
@@ -6,11 +8,6 @@
 
 .c-navbar {
     background-color: white;
-
-    &__logo {
-        font-size: 1.5rem;
-        letter-spacing: -2px;
-    }
 
     &__li {
         padding: 1.3em 2.5em;
@@ -23,7 +20,7 @@
 
 .c-ul{
     &--contracted {
-        position: absolute;
+        position: fixed;
         top: 0em;
         left: 0em;
         width: 65vw;
@@ -44,15 +41,10 @@
     animation: shadow-window-animation 0.8s ease-out;
 }
 
-input {
-    width: 60%;
-}
-
 .c-searcher {
     padding: 1em 1.5em;
     background-color: white;
     border-radius: 4em;
-
 
     &__container {
         position: absolute;
@@ -73,4 +65,19 @@ input {
 .c-404 {
     height: 85vh;
     text-align: center;
+}
+
+.c-main-article {
+    background-color: var(--beish-color);
+
+    &__button {
+        color: white;
+        background-color: black;
+        border-radius: 2em;
+
+        &:hover {
+            background-color: #181818;
+            transition: background-color 0.5s ease-in;
+        }
+    }
 }
