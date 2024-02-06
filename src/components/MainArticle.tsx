@@ -3,7 +3,7 @@ import models from '../assets/images/models.png'
 const MainArticle: React.FC = () => {
     return (
         <article className='c-main-article xl:mt-8'>
-            <article className='flex flex-col md:grid md:grid-cols-12 lg:flex-row container px-8 pt-14 sm:pt-24 lg:pt-25 mx-auto'>
+            <article className='flex flex-col md:grid md:grid-cols-12 lg:flex-row container px-8 pt-14 sm:pt-24 lg:pt-25 lg:pb-4 mx-auto'>
                 <section className='md:col-start-1 md:col-end-7'>
                     <section className='flex flex-col pt-8'>
                         <span className='text-4xl sm:text-6xl lg:text-7xl u-extra-bold-font'>FIND MANY CLOTHES</span>
@@ -28,7 +28,7 @@ const MainArticle: React.FC = () => {
                         </section>
                     </section>
                 </section>
-                <section className='md:col-start-7 md:col-end-13 justify-self-center self-end'>
+                <section className='md:col-start-7 md:col-end-13 justify-self-end self-end'>
                     <img src={models} alt="main-article-image" className='' />
                 </section>
             </article>
