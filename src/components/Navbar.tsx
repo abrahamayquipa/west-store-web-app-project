@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
                             ? <i className='iconsax col-span-1 sm:hidden self-center' icon-name='x' onClick={toggleMenu}></i>
                             : <i className='iconsax col-span-1 sm:hidden self-center' icon-name='hamburger-menu' onClick={toggleMenu}></i>
                     }
-                    <span className='col-span-2 xl:col-span-1 c-navbar__logo u-extra-bold-font self-center'>WEST.CO</span>
+                    <span className='col-span-2 xl:col-span-1 text-2xl sm:text-3xl u-extra-bold-font self-center'>WEST.CO</span>
                     <ul className='hidden lg:flex lg:col-start-3 lg:col-end-8 xl:col-start-2 justify-evenly items-center'>
                         <li>
                             <NavLink to='/' className='u-regular-font'> Home</NavLink>

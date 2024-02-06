@@ -1,8 +1,10 @@
+import MainArticle from "../components/MainArticle"
+
 const Home = () => {
     return (
-        <article>
-            
-        </article>
+        <>
+            <MainArticle/>
+        </>
     )
 }
 
