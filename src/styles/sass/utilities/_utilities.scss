@@ -1,6 +1,13 @@
 .u-extra-bold-font {
     font-family: var(--bold-font);
     font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.u-bold-font {
+    font-family: var(--bold-font);
+    font-weight: 500;
+    letter-spacing: -4px;
 }
 
 .u-regular-font {
