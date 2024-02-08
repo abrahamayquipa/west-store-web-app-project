@@ -1,9 +1,10 @@
 .c-navbar-container {
     position: fixed;
-    top: 0em;
+    top: 0;
     width: 100%;
     background-color: white;
-    box-shadow:black
+    box-shadow:black;
+    z-index: 100;
 }
 
 .c-navbar {
@@ -21,9 +22,9 @@
 .c-ul{
     &--contracted {
         position: fixed;
-        top: 0em;
-        left: 0em;
-        width: 65vw;
+        top: 0;
+        left: 0;
+        width: 65%;
         height: 100vh;
         background-color: var(--beish-color);
         animation: ul-animation 0.3s ease-in;
@@ -31,7 +32,7 @@
 }
 
 .c-shadow-window {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -79,5 +80,11 @@
             background-color: #181818;
             transition: background-color 0.5s ease-in;
         }
+    }
+}
+
+.c-main-article {
+    &__image {
+        border-radius: 0.8em;
     }
 }
