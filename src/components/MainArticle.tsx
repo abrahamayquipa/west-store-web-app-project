@@ -2,6 +2,7 @@ import models from '../assets/images/models.png'
 
 const MainArticle: React.FC = () => {
     return (
+        <>
         <article className='c-main-article xl:mt-8'>
             <article className='flex flex-col md:grid md:grid-cols-12 lg:flex-row container px-8 pt-14 sm:pt-24 lg:pt-25 lg:pb-4 mx-auto'>
                 <section className='md:col-start-1 md:col-end-7'>
@@ -33,6 +34,7 @@ const MainArticle: React.FC = () => {
                 </section>
             </article>
         </article>
+        </>
     )
 }
 
