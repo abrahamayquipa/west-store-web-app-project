@@ -1,11 +1,13 @@
 import MainArticle from "../components/MainArticle"
-import SwiperMainArticle from "../components/SwiperMainArticle"
+import MainArticleCarousel from "../components/MainArticleCarousel"
+import NewArrivals from "../components/NewArrivals"
 
 const Home = () => {
     return (
         <>
             <MainArticle/>
-            <SwiperMainArticle/>
+            <MainArticleCarousel/>
+            <NewArrivals/>
         </>
     )
 }

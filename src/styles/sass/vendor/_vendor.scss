@@ -2,23 +2,8 @@
     font-size: 24px;
 }
 
-.swiper-slide  {
-    margin: auto;
-    padding-bottom: 0.5em;
-}
-
-.swiper-pagination {
-    --swiper-pagination-color: black;
-    --swiper-pagination-bullet-size: 0.5em;
-    //--swiper-pagination-bullet-inactive-color: #000;
-    //--swiper-pagination-bullet-inactive-opacity: 0.2;
-    //--swiper-pagination-bullet-opacity: 1;
-    //--swiper-pagination-bullet-horizontal-gap: 0.2em;
-    //--swiper-pagination-bullet-vertical-gap: 2em;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    --swiper-navigation-size: 1em;
+.swiper-button-prev,
+.swiper-button-next {
+    --swiper-navigation-size: 1.5em;
     --swiper-theme-color: black;
 }
