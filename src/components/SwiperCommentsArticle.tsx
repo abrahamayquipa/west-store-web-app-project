@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules';
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules'
 
-import NewArrivalCards from "./NewArrivalCards"
-import FetchDataError from '../errors/FetchDataError'
+import Comment from "./Comment"
+import FetchCommentsError from "../errors/FetchCommentsError";
 
 export enum Name {
     ChangeTitle = 'Change title',
@@ -34,72 +34,54 @@ export interface Welcome {
     category:    Category
 }
 
-const SwiperNewArrivals: React.FC = () => {
+const SwiperCommentsArticle = () => {
     useEffect(() => {
-        const swiper = new Swiper('.swiper-new-arrivals', {
-            modules: [Navigation, Pagination],
+        const swiper = new Swiper('.swiper-comments-main-article', {
             direction: 'horizontal',
             loop: true,
             allowTouchMove: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
             breakpoints: {
                 200: {
                     slidesPerView: 1,
                     spaceBetween: 20,
                 },
-                450: {
+                850: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                800: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1000: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
+                    spaceBetween: 30,
                 },
                 1500: {
-                    slidesPerView: 5,
-                    spaceBetween: 25,
-                },
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
             },
         });
-        return () => {
+		return () => {
 			swiper.destroy();
 		};
     }, []);
 
-    const [data, setData] = useState<Welcome[]>([])
-
+    const [comments, setComments] = useState<Welcome[]>([])
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchComments = async () => {
             try {
                 const res = await fetch('https://api.escuelajs.co/api/v1/products')
-                if (!res.ok) throw new FetchDataError('The query failed')
+                if (!res.ok) throw new FetchCommentsError('The query failed')
                 const json = await res.json() as Welcome[];
-                setData(json)
+                setComments(json)
             } catch (error) {
-                if (error instanceof FetchDataError) console.log(`${error}`)
+                if (error instanceof FetchCommentsError) console.log(`${error}`)
             }
         }
-        fetchData()
+        fetchComments()
     }, [])
 
     return (
-        <section className='swiper-new-arrivals overflow-hidden'>
+        <section className='swiper-comments-main-article overflow-hidden'>
             <section className='flex swiper-wrapper'>
             {
-                data.slice(0,20).map((el) => (
+                comments.slice(0,20).map((el) => (
                     <div className='swiper-slide' key={el.id}>
-                        <NewArrivalCards image={el.images[0]} name={el.title} price={el.price} />
+                        <Comment name={el.title} description={el.description}/>
                     </div>
                 ))
             }
@@ -108,4 +90,4 @@ const SwiperNewArrivals: React.FC = () => {
     )
 }
 
-export default SwiperNewArrivals
+export default SwiperCommentsArticle
