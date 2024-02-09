@@ -36,7 +36,7 @@ export interface Welcome {
 
 const SwiperTopSelling: React.FC = () => {
     useEffect(() => {
-        const swiper = new Swiper('.swiper-new-arrivals', {
+        const swiper = new Swiper('.swiper-top-selling', {
             modules: [Navigation, Pagination],
             direction: 'horizontal',
             loop: true,
@@ -93,7 +93,7 @@ const SwiperTopSelling: React.FC = () => {
         fetchData()
     }, [])
     return (
-        <section className='swiper-new-arrivals overflow-hidden'>
+        <section className='swiper-top-selling overflow-hidden'>
             <section className='flex swiper-wrapper'>
             {
                 data.slice(20,40).map((el) => (
