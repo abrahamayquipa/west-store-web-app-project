@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import Swiper from 'swiper';
-import { Autoplay } from 'swiper/modules'
 
 import Comment from "./Comment"
 import FetchCommentsError from "../errors/FetchCommentsError";
