@@ -5,32 +5,12 @@ import Swiper from 'swiper';
 import Comment from "./Comment"
 import FetchCommentsError from "../errors/FetchCommentsError";
 
-export enum Name {
-    ChangeTitle = 'Change title',
-    Clothes = 'Clothes',
-    Electronics = 'Electronics',
-    Miscellaneous = 'Miscellaneous',
-    Música = 'Música',
-    Shoes = 'Shoes'
-}
-
-export interface Category {
-    id:         number
-    name:       Name
-    image:      string
-    creationAt: Date
-    updatedAt:  Date
-}
-
-export interface Welcome {
-    id:          number
-    title:       string
-    price:       number
-    description: string
-    images:      string[]
-    creationAt:  Date
-    updatedAt:   Date
-    category:    Category
+export interface Comment {
+    postId: number;
+    id:     number;
+    name:   string;
+    email:  string;
+    body:   string;
 }
 
 const SwiperCommentsArticle = () => {
@@ -59,13 +39,13 @@ const SwiperCommentsArticle = () => {
 		};
     }, []);
 
-    const [comments, setComments] = useState<Welcome[]>([])
+    const [comments, setComments] = useState<Comment[]>([])
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const res = await fetch('https://api.escuelajs.co/api/v1/products')
+                const res = await fetch('https://jsonplaceholder.typicode.com/comments')
                 if (!res.ok) throw new FetchCommentsError('The query failed')
-                const json = await res.json() as Welcome[];
+                const json = await res.json() as Comment[];
                 setComments(json)
             } catch (error) {
                 if (error instanceof FetchCommentsError) console.log(`${error}`)
@@ -78,9 +58,9 @@ const SwiperCommentsArticle = () => {
         <section className='swiper-comments-main-article overflow-hidden'>
             <section className='flex swiper-wrapper'>
             {
-                comments.slice(0,20).map((el) => (
+                comments.map((el) => (
                     <div className='swiper-slide' key={el.id}>
-                        <Comment name={el.title} description={el.description}/>
+                        <Comment name={el.email} description={el.body}/>
                     </div>
                 ))
             }

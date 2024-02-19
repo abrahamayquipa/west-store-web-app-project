@@ -23,7 +23,7 @@ export interface Category {
     updatedAt:  Date
 }
 
-export interface Welcome {
+export interface Arrivals {
     id:          number
     title:       string
     price:       number
@@ -77,14 +77,14 @@ const SwiperNewArrivals: React.FC = () => {
 		};
     }, []);
 
-    const [data, setData] = useState<Welcome[]>([])
+    const [data, setData] = useState<Arrivals[]>([])
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await fetch('https://api.escuelajs.co/api/v1/products')
                 if (!res.ok) throw new FetchDataError('The query failed')
-                const json = await res.json() as Welcome[];
+                const json = await res.json() as Arrivals[];
                 setData(json)
             } catch (error) {
                 if (error instanceof FetchDataError) console.log(`${error}`)

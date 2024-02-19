@@ -23,7 +23,7 @@ export interface Category {
     updatedAt:  Date
 }
 
-export interface Welcome {
+export interface TopSelling {
     id:          number
     title:       string
     price:       number
@@ -77,14 +77,14 @@ const SwiperTopSelling: React.FC = () => {
 		};
     }, []);
 
-    const [data, useData] = useState<Welcome[]>([])
+    const [data, useData] = useState<TopSelling[]>([])
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await fetch('https://api.escuelajs.co/api/v1/products')
                 if (!res.ok) throw new FetchDataError('The query failed')
-                const json = await res.json() as Welcome[];
+                const json = await res.json() as TopSelling[];
                 useData(json)
             } catch (error) {
                 if (error instanceof FetchDataError) console.log(`${error}`)
@@ -92,6 +92,7 @@ const SwiperTopSelling: React.FC = () => {
         }
         fetchData()
     }, [])
+
     return (
         <section className='swiper-top-selling overflow-hidden'>
             <section className='flex swiper-wrapper'>
