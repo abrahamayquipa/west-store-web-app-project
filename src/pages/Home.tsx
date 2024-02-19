@@ -1,7 +1,6 @@
 import MainArticle from "../components/MainArticle"
 import MainArticleCarousel from "../components/MainArticleCarousel"
-import NewArrivals from "../components/NewArrivals"
-import TopSelling from "../components/TopSelling"
+import SwiperArticle from "../components/SwiperArticle"
 import Frames from "../components/Frames"
 import CommentsArticle from "../components/CommentsArticle"
 import Newsletter from "../components/Newsletter"
@@ -11,8 +10,8 @@ const Home = () => {
         <>
             <MainArticle/>
             <MainArticleCarousel/>
-            <NewArrivals/>
-            <TopSelling/>
+            <SwiperArticle title='NEW ARRIVALS' url='https://api.escuelajs.co/api/v1/products'/>
+            <SwiperArticle title='TOP SELLING' url='https://api.escuelajs.co/api/v1/products'/>
             <Frames/>
             <CommentsArticle/>
             <Newsletter/>

@@ -1,13 +1,13 @@
 import RatingStarts from './RatingStarts';
 import DiscountLabel from './DiscountLabel';
 
-type NewArrivalCardProps = {
+type CarouselCardProps = {
     image: string
     name: string
     price: number
 }
 
-const NewArrivalCards: React.FC<NewArrivalCardProps> = (props) => {
+const CarouselCard: React.FC<CarouselCardProps> = (props) => {
     const ratingValue = (Math.random() * (5 - 1) + 1).toFixed(2)
     const switchValue = Math.floor(Math.random() * 10)
     const discountValue = Math.floor(Math.random() * 60 + 10)
@@ -31,4 +31,4 @@ const NewArrivalCards: React.FC<NewArrivalCardProps> = (props) => {
     )
 }
 
-export default NewArrivalCards;
+export default CarouselCard;

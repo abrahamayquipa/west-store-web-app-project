@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules'
@@ -12,7 +12,7 @@ import reebok from '../assets/images/reebok-logo.png';
 
 const SwiperMainArticle: React.FC = () => {
     useEffect(() => {
-        const swiper = new Swiper('.swiper-main-article', {
+        const swiper = new Swiper('.custom-swiper', {
             modules: [Autoplay],
             direction: 'horizontal',
             loop: true,
@@ -62,7 +62,7 @@ const SwiperMainArticle: React.FC = () => {
     }, []);
 
     return (
-        <div className="swiper-main-article">
+        <div className="custom-swiper">
             <div className="swiper-wrapper">
                 <div className="swiper-slide">
                     <img src={adidas} alt="adidas" />

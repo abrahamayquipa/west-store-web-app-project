@@ -1,40 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Swiper from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules';
 
-import NewArrivalCards from "./NewArrivalCards"
-import FetchDataError from '../errors/FetchDataError'
+import Card from "./Card";
 
-export enum Name {
-    ChangeTitle = 'Change title',
-    Clothes = 'Clothes',
-    Electronics = 'Electronics',
-    Miscellaneous = 'Miscellaneous',
-    Música = 'Música',
-    Shoes = 'Shoes'
+type SwiperCardsProps = {
+    carouselImages: {
+        id: string,
+        images: string,
+        title: string,
+        price: number
+    }[]
 }
 
-export interface Category {
-    id:         number
-    name:       Name
-    image:      string
-    creationAt: Date
-    updatedAt:  Date
-}
-
-export interface Arrivals {
-    id:          number
-    title:       string
-    price:       number
-    description: string
-    images:      string[]
-    creationAt:  Date
-    updatedAt:   Date
-    category:    Category
-}
-
-const SwiperNewArrivals: React.FC = () => {
+const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
     useEffect(() => {
         const swiper = new Swiper('.swiper-new-arrivals', {
             modules: [Navigation, Pagination],
@@ -77,29 +57,13 @@ const SwiperNewArrivals: React.FC = () => {
 		};
     }, []);
 
-    const [data, setData] = useState<Arrivals[]>([])
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch('https://api.escuelajs.co/api/v1/products')
-                if (!res.ok) throw new FetchDataError('The query failed')
-                const json = await res.json() as Arrivals[];
-                setData(json)
-            } catch (error) {
-                if (error instanceof FetchDataError) console.log(`${error}`)
-            }
-        }
-        fetchData()
-    }, [])
-
     return (
         <section className='swiper-new-arrivals overflow-hidden'>
             <section className='flex swiper-wrapper'>
             {
-                data.slice(0,20).map((el) => (
+                props.carouselImages.slice(0,20).map((el) => (
                     <div className='swiper-slide' key={el.id}>
-                        <NewArrivalCards image={el.images[0]} name={el.title} price={el.price} />
+                        <Card image={el.images[0]} name={el.title} price={el.price} />
                     </div>
                 ))
             }
@@ -108,4 +72,4 @@ const SwiperNewArrivals: React.FC = () => {
     )
 }
 
-export default SwiperNewArrivals
+export default SwiperCards
