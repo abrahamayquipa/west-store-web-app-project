@@ -1,5 +1,5 @@
 type DiscountLabelProps = {
-    value: number
+    value?: number
 }
 
 const DiscountLabelComponent : React.FC<DiscountLabelProps> = (props) => {
@@ -10,4 +10,4 @@ const DiscountLabelComponent : React.FC<DiscountLabelProps> = (props) => {
     )
 }
 
-export default DiscountLabelComponent
+export default DiscountLabelComponent;

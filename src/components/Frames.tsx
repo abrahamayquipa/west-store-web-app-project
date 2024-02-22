@@ -9,11 +9,11 @@ const Frames: React.FC = () => {
                 <section className='text-center'>
                     <span className='text-5xl u-extra-bold-font'>BROWSE BY DRESS STYLE</span>
                 </section>
-                <section className=''>
+                <section>
                     <section className='flex flex-col sm:flex-row justify-center '>
-                        <img src={casual} alt={casual} className='my-4 mr-2 md:mr-4' />
-                        <img src={formal} alt={formal} className='hidden lg:inline my-4' />
-                        <img src={gym} alt={gym} className='my-4 ml-2 md:ml-4' />
+                        <img src={casual} alt={casual} className='my-4 mr-2 md:mr-4 c-card' />
+                        <img src={formal} alt={formal} className='hidden lg:inline my-4 c-card' />
+                        <img src={gym} alt={gym} className='my-4 ml-2 md:ml-4 c-card' />
                     </section>
                 </section>
             </section>

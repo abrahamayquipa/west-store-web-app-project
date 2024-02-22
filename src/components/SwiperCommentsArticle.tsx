@@ -6,11 +6,10 @@ import Comment from "./Comment"
 import FetchCommentsError from "../errors/FetchCommentsError";
 
 export interface Comment {
-    postId: number;
-    id:     number;
-    name:   string;
-    email:  string;
-    body:   string;
+    id: number;
+    name: string;
+    email: string;
+    body: string;
 }
 
 const SwiperCommentsArticle = () => {
@@ -69,4 +68,4 @@ const SwiperCommentsArticle = () => {
     )
 }
 
-export default SwiperCommentsArticle
+export default SwiperCommentsArticle;
