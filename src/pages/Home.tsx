@@ -11,7 +11,7 @@ const Home = () => {
             <MainArticle/>
             <MainArticleCarousel/>
             <SwiperArticle title='NEW ARRIVALS' url='http://localhost:3000/api/products'/>
-            <SwiperArticle title='TOP SELLING' url='https://api.escuelajs.co/api/v1/products'/>
+            <SwiperArticle title='TOP SELLING' url='http://localhost:3000/api/products?category=4'/>
             <Frames/>
             <CommentsArticle/>
             <Newsletter/>

@@ -10,6 +10,7 @@ app.use(cors({
 
 app.use('/api', ProductsRouter);
 
+
 app.listen(3000, () => {
   console.log('Server on 3000 port');
 });

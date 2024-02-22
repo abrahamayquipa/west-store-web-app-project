@@ -1,12 +1,12 @@
 import { Rating } from "@mui/material";
 
 type RatingStartsProps = {
-    value: string
+    rate: number
 }
 
 const RatingStarts: React.FC<RatingStartsProps> = (props) => {
     return (
-        <Rating name="half-rating-read" defaultValue={parseFloat(props.value)} precision={0.5} readOnly />
+        <Rating name="half-rating-read" defaultValue={props.rate} precision={0.5} readOnly />
     )
 }
 
