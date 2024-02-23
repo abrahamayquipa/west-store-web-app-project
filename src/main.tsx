@@ -2,9 +2,10 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home';
-import Error404 from './pages/Error'
+import Product from './pages/Product';
+import Error404 from './pages/Error';
 
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const rootElement = document.getElementById('root') ?? document.createElement('div')
@@ -16,6 +17,7 @@ root.render (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={ <Home /> } />
+        <Route path='/product' element={ <Product /> } />
         <Route path='*' element={ <Error404 /> } />
       </Routes>
     </BrowserRouter>
