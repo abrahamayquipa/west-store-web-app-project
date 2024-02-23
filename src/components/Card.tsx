@@ -24,7 +24,9 @@ const Card: React.FC<CardProps> = (props) => {
                 </div>
                 <div className='flex'>
                     <span className='text-2xl font-semibold tracking-tighter mx-1'>{`$${props.currentPrice}`}</span>
-                    <span className='text-2xl text-gray-400 font-semibold line-through tracking-tighter mx-1'>{props.oldPrice}</span>
+                    <span className='text-2xl text-gray-400 font-semibold line-through tracking-tighter mx-1'>
+                        {props.oldPrice && `$${props.oldPrice}`}
+                    </span>
                     {props.discount && <DiscountLabel value={props.discount}/>}
                 </div>
             </div>

@@ -100,3 +100,58 @@
         transition: 0.1s ease-in-out;
     }
 }
+
+.c-product {
+    &__main-card {
+        &--hidden {
+            position: relative;
+            border-radius: 1.5em;
+            overflow: hidden;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 1s ease-out;
+        }
+    }
+
+    &__secondary-cards {
+        width: 30%;
+        border-radius: 0.8em;
+    }
+}
+
+.c-circle {
+    &__back {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+    &__front {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    &--brown {
+        background-color: #4F4631;
+    }
+
+    &--green {
+        background-color: #314F4A;
+    }
+
+    &--purple {
+        background-color: #31344F;
+    }
+
+    &--beish {
+        background-color: #E5E2D8;
+    }
+
+    &--pink {
+        background-color: #FAC6C6;
+    }
+}
