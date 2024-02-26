@@ -1,8 +1,7 @@
-import { HashRouter, NavLink } from 'react-router-dom'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { BrowserRouter, NavLink } from 'react-router-dom'
 
 import ShadowWindow from './ShadowWindow'
-
 import SearcherTextField from './SearcherTextField'
 import Searcher from './Searcher'
 
@@ -18,8 +17,14 @@ const Navbar: React.FC = () => {
         setSearcherButton(!searcherButton)
     }
 
+    const handleHomeClick = () => {
+        setTimeout(() => {
+            window.location.reload();
+        }, 10)
+    }
+
     return (
-        <HashRouter>
+        <BrowserRouter>
             <nav className='h-16 sm:h-24 c-navbar-container'>
                 <div className='grid grid-cols-7 sm:grid-cols-12 gap-4 h-16 sm:h-24 px-8 container mx-auto relative z-50 c-navbar'>
                     {
@@ -27,7 +32,9 @@ const Navbar: React.FC = () => {
                             ? <i className='iconsax col-span-1 sm:hidden self-center' icon-name='x' onClick={toggleMenu}></i>
                             : <i className='iconsax col-span-1 sm:hidden self-center' icon-name='hamburger-menu' onClick={toggleMenu}></i>
                     }
-                    <span className='col-span-2 xl:col-span-1 text-2xl sm:text-3xl u-extra-bold-font self-center'>WEST.CO</span>
+                    <span className='col-span-2 xl:col-span-1 text-2xl sm:text-3xl u-extra-bold-font self-center'>
+                        <NavLink to='/' onClick={handleHomeClick}>WEST.CO</NavLink>
+                    </span>
                     <ul className='hidden lg:flex lg:col-start-3 lg:col-end-8 xl:col-start-2 justify-evenly items-center'>
                         <li>
                             <NavLink to='/' className='u-regular-font'> Home</NavLink>
@@ -87,7 +94,7 @@ const Navbar: React.FC = () => {
                         : <ShadowWindow state='hidden'/>
                 }
             </nav>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

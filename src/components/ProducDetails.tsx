@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 import RatingStarts from './RatingStarts';
 import DiscountLabel from './DiscountLabel';
-import ColorCircle from './ColorCircle';
-import SizeCircle from './SizeCircle';
 import FetchDataError from '../errors/FetchDataError';
 
 type ProductDetailsProps = {
@@ -18,6 +17,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
     const [size, setSize] = useState('sm');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         const fetchData = async () => {
             try {
                 const res = await fetch(`http://localhost:3000/api/products/${props.id}`);
@@ -30,9 +31,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
         }
         fetchData();
     }, [props.id])
-
     return (
-        <article className='container mx-auto lg:flex px-8 mt-16 lg:mt-40'>
+        <Link to={`/product/${props.id}`}>
+            <article className='container mx-auto lg:flex px-8 mt-16 sm:mt-28 lg:mt-40'>
             <section className='flex flex-col lg:w-2/6 lg:mr-4'>
                 <section className='flex w-full lg:my-4 justify-between order-last'>
                     {data.images && data.images.length > 0 && (
@@ -44,7 +45,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                 <section>
                     {data.images && data.images.length > 0 && (
                         <div className='c-product__main-card--hidden'>
-                        <img src={imageSelected || data.images[0]} alt={data.images[0]} className='w-full c-product__main-card' />
+                            <img src={imageSelected || data.images[0]} alt={data.images[0]} className='w-full c-product__main-card' />
                         </div>
                     )}
                 </section>
@@ -65,40 +66,39 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                 </section>
                 <section className='flex'>
                     {data.price && (
-                        <>
-                            <section className='flex items-center lg:my-1'>
+                        <section className='flex items-center lg:my-1'>
                             {data.price.currentPrice && <h1 className='text-2xl lg:text-3xl tracking-tighter mx-1'>{`$${data.price.currentPrice}`}</h1>}
                             {data.price.oldPrice && <span className='lg:mx-2 text-2xl lg:text-3xl text-gray-400 font-semibold line-through tracking-tighter mx-1'>{`$${data.price.oldPrice}`}</span>}
                             {data.price.discount && <div className='flex'><DiscountLabel value={data.price.discount} /></div>}
-                            </section>
-                        </>
+                        </section>
                     )}
                 </section>
                 {data.description && <p className='my-2 u-regular-font'>{data.description}</p>}
                 <section className='mt-4'>
                     <span className='u-regular-font'>{`Select color: ${color}`}</span>
-                    <ColorCircle/>
+                    <section className='flex flex-wrap'>
+                        {[{name: 'brown', color:'#4F4631'}, {name: 'green', color:'#314F4A'}, {name: 'purple', color:'#31344F'}, {name: 'beish', color:'#E5E2D8'}, {name: 'pink', color:'#FAC6C6'}].map(({name, color}, index) => (
+                            <div key={index} className='mr-2 c-circle__back flex' onClick={() => {setColor(name)}}>
+                                <div className={`c-circle__front self-center mx-auto`} style={{backgroundColor: color}}></div>
+                            </div>
+                        ))}
+                    </section>
                 </section>
                 <section className='mt-4'>
                     <span className='u-regular-font'>{`Choose Size: ${size}`}</span>
                     <section className='flex flex-wrap'>
-                        <SizeCircle size='sm'/>
-                        <SizeCircle size='md'/>
-                        <SizeCircle size='lg'/>
-                        <SizeCircle size='xl'/>
+                        {['sm', 'md', 'lg', 'xl'].map((value, index) => (
+                            <div key={index} className={`my-1 mr-2 px-6 py-2 rounded-3xl ${size === value ? 'bg-black text-white' : 'u-beish-bg'}`} onClick={() => setSize(value)}>
+                                <span className='u-regular-font'>{value}</span>
+                            </div>
+                        ))}
                     </section>
                 </section>
                 <section className='flex items-center lg:my-2'>
                     <div className='flex aling-center mr-2 my-4 px-6 lg:px-10 py-4 u-beish-bg rounded-3xl'>
-                        <i className='iconsax' icon-name='minus' onClick={() => {
-                            if (items > 0) setItems(items - 1)
-                        }}>
-                        </i>
+                        <i className='iconsax' icon-name='minus' onClick={() => { if (items > 0) setItems(items - 1)}}></i>
                         <span className='px-4 lg:px-8 u-regular-font'>{items}</span>
-                        <i className='iconsax' icon-name='add' onClick={() => {
-                            setItems(items + 1)
-                        }}>
-                        </i>
+                        <i className='iconsax' icon-name='add' onClick={() => {setItems(items + 1)}}></i>
                     </div>
                     <div className='w-full ml-2 py-4 text-white text-center bg-black rounded-3xl'>
                         <input type='button' value='Add to cart' />
@@ -106,6 +106,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                 </section>
             </section>
         </article>
+        </Link>
     )
 }
 

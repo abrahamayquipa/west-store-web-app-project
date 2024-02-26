@@ -16,9 +16,9 @@ root.render (
     <Navbar />
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ <Home /> } />
-        <Route path='/product' element={ <Product /> } />
-        <Route path='*' element={ <Error404 /> } />
+        <Route path='/' element={<Home />} />
+        <Route path='/product/:id' element={<Product />} />
+        <Route path='*' element={<Error404 />} />
       </Routes>
     </BrowserRouter>
     <Footer/>

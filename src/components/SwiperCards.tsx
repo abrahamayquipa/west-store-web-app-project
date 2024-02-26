@@ -55,17 +55,15 @@ const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
                 },
             },
         });
-        return () => {
-            swiper.destroy();
-        };
     }, []);
+
     return (
         <section className='swiper-clothe-cards overflow-hidden'>
             <section className='flex swiper-wrapper'>
                 {props.carouselImages.map((el) => (
                     <div className='swiper-slide' key={el.id}>
                         {el.images && el.images.length > 0 && (
-                            <Card image={el.images[0]} name={el.title} rate={el.rate} currentPrice={el.price.currentPrice} oldPrice={el.price.oldPrice} discount={el.price. discount} />
+                            <Card id={el.id} image={el.images[0]} name={el.title} rate={el.rate} currentPrice={el.price.currentPrice} oldPrice={el.price.oldPrice} discount={el.price. discount} />
                         )}
                     </div>
                 ))}
