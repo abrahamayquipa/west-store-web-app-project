@@ -13,10 +13,16 @@ type CardProps = {
     discount?: number;
 }
 
+const reloadPage = () => {
+    setTimeout(() => {
+        window.location.reload();
+    }, 50);
+}
+
 const Card: React.FC<CardProps> = (props) => {
     return (
         <Link to={`/product/${props.id}`}>
-            <section className='flex flex-col c-card'>
+            <section className='flex flex-col c-card' onClick={reloadPage}>
                 <div>
                     <img src={props.image} alt={props.image} className='c-main-article__image' />
                 </div>

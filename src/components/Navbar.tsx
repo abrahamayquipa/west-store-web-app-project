@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
     }
 
     const handleHomeClick = () => {
+        window.scrollTo(0, 0);
         setTimeout(() => {
             window.location.reload();
         }, 10)
@@ -37,16 +38,16 @@ const Navbar: React.FC = () => {
                     </span>
                     <ul className='hidden lg:flex lg:col-start-3 lg:col-end-8 xl:col-start-2 justify-evenly items-center'>
                         <li>
-                            <NavLink to='/' className='u-regular-font'> Home</NavLink>
+                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/' className='u-regular-font'> On Sale</NavLink>
+                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Top selling</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/' className='u-regular-font'> New Arrivals</NavLink>
+                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> New Arrivals</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/' className='u-regular-font'> Brands</NavLink>
+                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Your Style</NavLink>
                         </li>
                     </ul>
                     {

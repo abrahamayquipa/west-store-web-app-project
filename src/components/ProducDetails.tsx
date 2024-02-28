@@ -54,7 +54,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                     <section className='flex w-full lg:my-4 justify-between order-last'>
                         {data.images && data.images.length > 0 && (
                             data.images.map((el: string, index: number) => (
-                                <img key={index} src={el} alt={el} onClick={() => { setImageSelected(el) }} className='my-3 sm:my-6 lg:my-0 transition ease-in-out c-product__secondary-cards' />
+                                <img key={index} src={el} alt={el} onClick={() => { setImageSelected(el) }} className='my-3 sm:my-6 lg:my-0 c-product__secondary-cards' />
                             ))
                         )}
                     </section>
