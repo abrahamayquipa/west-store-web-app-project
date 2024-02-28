@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { getCartItems, setCartItem, deleteCartItems } from '../logic/cart';
+import { priceTotalItems, discount, finalPrice } from '../logic/cartOperations';
 import Newsletter from '../components/Newsletter';
 import Item from '../logic/Item';
 
@@ -20,18 +21,6 @@ const ShoppingCart = () => {
         const updatedCartItems = getCartItems();
         setArrayItems(updatedCartItems);
     };
-
-    const priceEachItem = (price: number, nItems: number) => {
-        return price * nItems;
-    }
-
-    const priceTotalItems = (arrayItems: Item[]) => {
-        let total = 0;
-        arrayItems.forEach((el: Item) => {
-            total += priceEachItem(el.price, el.numberItems)
-        })
-        return total;
-    }
 
     const checkout = () => {
         toast.error('Error: Pasarela de pagos en construcción')
@@ -86,21 +75,21 @@ const ShoppingCart = () => {
                                     <i className='iconsax' icon-name='discount-badge'></i>
                                     <span className='ml-1 u-regular-font'>Discount(-20%)</span>
                                 </div>
-                                <span className='text-xl text-rose-500 font-semibold tracking-tighter'>-$11.00</span>
+                                <span className='text-xl text-rose-500 font-semibold tracking-tighter'>{`-$${discount(arrayItems).toFixed(2)}`}</span>
                             </div>
                             <div className='flex justify-between items-center my-1'>
                                 <div className='flex items-center'>
                                     <i className='iconsax' icon-name='truck-speed'></i>
                                     <span className='ml-1 u-regular-font'>Delivery</span>
                                 </div>
-                                <span className='text-xl font-semibold tracking-tighter'>$15.00</span>
+                                <span className='text-xl font-semibold tracking-tighter'>-$15.00</span>
                             </div>
                             <div className='flex justify-between items-center my-4 lg:mb-6'>
                                 <div className='flex items-center'>
                                     <i className='iconsax' icon-name='money-5'></i>
                                     <span className='ml-1 u-regular-font'>Total</span>
                                 </div>
-                                <span className='font-bold text-2xl tracking-tighter'>{`$${priceTotalItems(arrayItems).toFixed(2)}`}</span>
+                                <span className='font-bold text-2xl tracking-tighter'>{`$${finalPrice(arrayItems).toFixed(2)}`}</span>
                             </div>
                             <div className='w-full'>
                                 <input type='button' value='Go to checkout' className='w-full p-4 bg-black text-base text-white rounded-full u-regular-font' onClick={checkout}/>
@@ -110,7 +99,7 @@ const ShoppingCart = () => {
                     </section>
                 ) : (
                     <article className='container flex px-8 mx-auto my-32'>
-                        <span className='text-6xl text-center m-auto u-extra-bold-font'>There isn't any products in your cart😭</span>
+                        <span className='text-6xl text-center m-auto u-extra-bold-font'>There isn't any product in your cart😭</span>
                     </article>
                 )}
             </article>
