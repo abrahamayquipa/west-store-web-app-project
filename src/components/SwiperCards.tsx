@@ -13,7 +13,7 @@ type SwiperCardsProps = {
             oldPrice?: number;
             discount?: number;
         };
-        images?: string[]; // Make images optional
+        images?: string[];
     }[];
 }
 
@@ -46,7 +46,7 @@ const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
                     spaceBetween: 20,
                 },
                 1000: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                     spaceBetween: 20,
                 },
                 1500: {

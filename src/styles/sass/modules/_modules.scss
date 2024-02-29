@@ -4,7 +4,7 @@
     width: 100%;
     background-color: white;
     box-shadow:black;
-    z-index: 100;
+    z-index: 40;
 }
 
 .c-navbar {
@@ -133,5 +133,11 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
+    }
+}
+
+.login {
+    &__image {
+        background-color: var(--beish-color);
     }
 }
