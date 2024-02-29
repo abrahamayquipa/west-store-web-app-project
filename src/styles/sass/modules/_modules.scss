@@ -4,7 +4,7 @@
     width: 100%;
     background-color: white;
     box-shadow:black;
-    z-index: 100;
+    z-index: 40;
 }
 
 .c-navbar {
@@ -64,7 +64,7 @@
 }
 
 .c-404 {
-    height: 85vh;
+    height: 65vh;
     text-align: center;
 }
 
@@ -92,4 +92,52 @@
 .c-comments {
     border: var(--beish-color) solid 2px;
     border-radius: 2em;
+}
+
+.c-card {
+    &:hover {
+        scale: 0.9;
+        transition: 0.1s ease-in-out;
+    }
+}
+
+.c-product {
+    &__main-card {
+        &--hidden {
+            position: relative;
+            border-radius: 1.5em;
+            overflow: hidden;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 1s ease-out;
+        }
+    }
+
+    &__secondary-cards {
+        width: 30%;
+        border-radius: 0.8em;
+    }
+}
+
+.c-circle {
+    &__back {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+    &__front {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+}
+
+.login {
+    &__image {
+        background-color: var(--beish-color);
+    }
 }

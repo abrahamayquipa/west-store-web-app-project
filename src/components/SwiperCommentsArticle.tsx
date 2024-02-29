@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Swiper from 'swiper';
 
@@ -6,14 +6,13 @@ import Comment from "./Comment"
 import FetchCommentsError from "../errors/FetchCommentsError";
 
 export interface Comment {
-    postId: number;
-    id:     number;
-    name:   string;
-    email:  string;
-    body:   string;
+    id: number;
+    name: string;
+    email: string;
+    body: string;
 }
 
-const SwiperCommentsArticle = () => {
+const SwiperCommentsArticle: React.FC = () => {
     useEffect(() => {
         const swiper = new Swiper('.swiper-comments-main-article', {
             direction: 'horizontal',
@@ -69,4 +68,4 @@ const SwiperCommentsArticle = () => {
     )
 }
 
-export default SwiperCommentsArticle
+export default SwiperCommentsArticle;

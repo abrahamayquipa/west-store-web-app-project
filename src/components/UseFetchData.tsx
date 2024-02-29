@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 import SwiperCards from "./SwiperCards";
-import FetchDataError from '../errors/FetchDataError'
+import FetchDataError from '../errors/FetchDataError';
 
 type UseFetchDataProps = {
-    url: string
+    url: string;
 }
 
 const UseFetchData: React.FC<UseFetchDataProps> = (props) => {
@@ -13,15 +13,15 @@ const UseFetchData: React.FC<UseFetchDataProps> = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(props.url)
-                if (!res.ok) throw new FetchDataError('The query failed')
+                const res = await fetch(props.url);
+                if (!res.ok) throw new FetchDataError('The query failed');
                 const json = await res.json();
-                setData(json)
+                setData(json);
             } catch (error) {
-                if (error instanceof FetchDataError) console.log(`${error}`)
+                if (error instanceof FetchDataError) console.log(`${error}`);
             }
         }
-        fetchData()
+        fetchData();
     }, [])
 
     return (
@@ -29,4 +29,4 @@ const UseFetchData: React.FC<UseFetchDataProps> = (props) => {
     )
 }
 
-export default UseFetchData
+export default UseFetchData;

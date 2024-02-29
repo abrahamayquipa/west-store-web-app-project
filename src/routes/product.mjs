@@ -5,44 +5,67 @@ const app = express.Router();
 const data = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf-8'));
 
 function findByTitle(title, res) {
-    const product = data.find(product => product.title === title);
-    return sendResponse(product, res);
+    const product = data.filter(product => product.title === title);
+    sendResponse(product, res);
+}
+
+function findByRate(rate, res) {
+    const product = data.filter(product => product.rate === parseFloat(rate));
+    sendResponse(product, res);
 }
 
 function findByPrice(price, res) {
-    const product = data.find(product => product.price === parseInt(price));
-    return sendResponse(product, res);
+    const product = data.filter(product => product.price.currentPrice  === parseFloat(price));
+    sendResponse(product, res);
+}
+
+function findByColor(color, res) {
+    const product = data.filter(product => product.color === color);
+    sendResponse(product, res);
 }
 
 function findByPriceRange(priceMin, priceMax, res) {
-    const products = data.filter(product => product.price >= parseInt(priceMin) && product.price <= parseInt(priceMax));
-    return sendResponse(products, res);
+    const products = data.filter(product => product.price.currentPrice >= parseFloat(priceMin) && product.price.currentPrice <= parseFloat(priceMax));
+    sendResponse(products, res);
 }
 
 function findByCategoryId(categoryId, res) {
-    const products = data.filter(product => product.category.id === parseInt(categoryId));
-    return sendResponse(products, res);
+    const products = data.filter(product => product.category === parseInt(categoryId));
+    sendResponse(products, res);
 }
 
 function sendResponse(data, res) {
     if (data && data.length > 0) {
-        return res.send(data);
+        res.send(data);
     } else {
-        return res.status(404).send({ error: 'Product not found' });
+        res.status(404).send({ error: 'Product not found' });
     }
 }
 
-// Link: http://localhost:3000/api/products
-
 app.get('/products', (req, res) => {
-    const { title, price, priceMin, priceMax, categoryId } = req.query;
+    const {
+        title,
+        rate,
+        price,
+        color,
+        priceMin,
+        priceMax,
+        category
+    } = req.query;
 
-    if (title) return findByTitle(title, res);
-    if (price) return findByPrice(price, res);
-    if (priceMin && priceMax) return findByPriceRange(priceMin, priceMax, res);
-    if (categoryId) return findByCategoryId(categoryId, res);
-
-    return res.send(data);
+    if (title) {
+        findByTitle(title, res);
+    } else if (rate) {
+        findByRate(rate, res);
+    } else if (price) {
+        findByPrice(price, res);
+    } else if (color) {
+        findByColor(color, res);
+    }  else if (priceMin && priceMax) {
+        findByPriceRange(priceMin, priceMax, res);
+    } else if (category) {
+        findByCategoryId(category, res);
+    } else res.send(data);
 });
 
 app.get('/products/:id', (req, res) => {

@@ -1,12 +1,25 @@
+import React, { useState } from 'react';
 import { Rating } from "@mui/material";
 
 type RatingStartsProps = {
-    value: string
+    rate: number
 }
 
 const RatingStarts: React.FC<RatingStartsProps> = (props) => {
+    const [value, setValue] = useState<number | null>(props.rate);
+
+    const handleChange = (event: React.ChangeEvent<{}>, newValue: number | null) => {
+        setValue(newValue);
+    };
+
     return (
-        <Rating name="half-rating-read" defaultValue={parseFloat(props.value)} precision={0.5} readOnly />
+        <Rating
+            name="half-rating-read"
+            value={value}
+            precision={0.5}
+            readOnly
+            onChange={handleChange}
+        />
     )
 }
 

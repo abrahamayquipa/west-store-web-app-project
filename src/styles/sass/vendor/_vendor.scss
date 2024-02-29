@@ -2,6 +2,11 @@
     font-size: 24px;
 }
 
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
     --swiper-navigation-size: 1.5em;
