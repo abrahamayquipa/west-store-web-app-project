@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 import RatingStarts from './RatingStarts';
 import DiscountLabel from './DiscountLabel';
 import FetchDataError from '../errors/FetchDataError';
-
-import { addCartItem } from '../logic/cart'
 import Item from '../logic/Item';
+import Login from './Login';
+
+import { getUserFromSession } from '../logic/loginSesion';
+import { addCartItem } from '../logic/cart';
 
 type ProductDetailsProps = {
     id: number,
@@ -19,9 +21,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
     const [numberItems, setNumberItems] = useState(0);
     const [color, setColor] = useState('brown');
     const [size, setSize] = useState('sm');
+    const [showLogin, setShowLogin] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        if (!getUserFromSession()) setShowLogin(true);
 
         const fetchData = async () => {
             try {
@@ -49,6 +53,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
 
     return (
         <Link to={`/product/${props.id}`}>
+            {showLogin && <Login />}
             <article className='container mx-auto lg:flex px-8 mt-16 sm:mt-28 lg:mt-40'>
                 <section className='flex flex-col lg:w-2/6 lg:mr-4'>
                     <section className='flex w-full lg:my-4 justify-between order-last'>

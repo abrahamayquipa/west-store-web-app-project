@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Swiper from 'swiper';
 
@@ -12,7 +12,7 @@ export interface Comment {
     body: string;
 }
 
-const SwiperCommentsArticle = () => {
+const SwiperCommentsArticle: React.FC = () => {
     useEffect(() => {
         const swiper = new Swiper('.swiper-comments-main-article', {
             direction: 'horizontal',
