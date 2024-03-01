@@ -46,7 +46,7 @@ const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
                     spaceBetween: 20,
                 },
                 1000: {
-                    slidesPerView: 5,
+                    slidesPerView: 4,
                     spaceBetween: 20,
                 },
                 1500: {

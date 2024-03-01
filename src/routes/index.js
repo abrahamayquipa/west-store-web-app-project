@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import ProductsRouter from './product.mjs';
+import productsRouter from './product.mjs';
 
 const app = express();
 
@@ -8,7 +8,7 @@ app.use(cors({
   origin: 'http://localhost:5173'
 }));
 
-app.use('/api', ProductsRouter);
+app.use('/api', productsRouter);
 
 
 app.listen(3000, () => {
