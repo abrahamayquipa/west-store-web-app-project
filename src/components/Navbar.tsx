@@ -39,18 +39,10 @@ const Navbar: React.FC = () => {
                         <NavLink to='/' onClick={handleHomeClick}>WEST.CO</NavLink>
                     </span>
                     <ul className='hidden lg:flex lg:col-start-3 lg:col-end-8 xl:col-start-2 justify-evenly items-center'>
-                        <li>
-                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Top selling</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> New Arrivals</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Your Style</NavLink>
-                        </li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Home</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Top selling</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> New Arrivals</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Your Style</NavLink></li>
                     </ul>
                     {
                         searcherButton
@@ -62,7 +54,7 @@ const Navbar: React.FC = () => {
                             </>
                             : <i className='iconsax col-start-5 col-end-6 justify-self-end self-center sm:hidden' icon-name='search-normal-2' onClick={() => { toogleSearcher(); setMenuButton(false) }}></i>
                     }
-                    <Searcher className='hidden sm:block col-start-3 col-end-6 sm:col-start-4 sm:col-end-11 lg:col-start-8 lg:col-end-12' />
+                    <Searcher className='hidden sm:block col-start-3 col-end-6 sm:col-start-4 sm:col-end-11 lg:col-start-8 lg:col-end-12'/>
                     <section className='hidden lg:flex lg:col-start-12 lg:col-end-13 justify-evenly items-center'>
                         <NavLink to='/shopping-cart' onClick={handleHomeClick}>
                             <i className='iconsax' icon-name='basket-1'></i>

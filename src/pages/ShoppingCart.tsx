@@ -28,7 +28,7 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <article className='container mx-auto px-8 mt-24'>
+            <article className='container mx-auto px-8 mt-16 sm:mt-24'>
                 <h1 className='text-5xl u-extra-bold-font'>YOUR CART</h1>
                 {arrayItems.length > 0 ? (
                     <section className='grid grid-cols-7 lg:grid-cols-12 gap-4 mt-8 lg:mb-16'>
