@@ -20,7 +20,7 @@ root.render (
         <Route path='/' element={<Home />} />
         <Route path='/product/:id' element={<Product />} />
         <Route path='/shopping-cart' element={<ShoppingCart />} />
-        <Route path='/product/search/:name' element={<SearcherProducts />} />
+        <Route path='/product/search/:name?' element={<SearcherProducts />} />
         <Route path='*' element={<Error404 />} />
       </Routes>
     </BrowserRouter>

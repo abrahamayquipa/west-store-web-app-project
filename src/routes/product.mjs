@@ -39,7 +39,7 @@ function sendResponse(data, res) {
     else res.status(404).send({ error: 'Product not found' });
 }
 
-app.get('/products/', (req, res) => {
+app.get('/products', (req, res) => {
     const { title, rate, price, color, priceMin, priceMax, category } = req.query;
 
     if (title) findByTitle(title, res);
