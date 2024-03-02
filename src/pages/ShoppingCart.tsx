@@ -28,7 +28,7 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <article className='container mx-auto px-8 mt-16 sm:mt-24'>
+            <article className='container mx-auto px-8 mt-24'>
                 <h1 className='text-5xl u-extra-bold-font'>YOUR CART</h1>
                 {arrayItems.length > 0 ? (
                     <section className='grid grid-cols-7 lg:grid-cols-12 gap-4 mt-8 lg:mb-16'>
@@ -46,15 +46,7 @@ const ShoppingCart = () => {
                                         <div className='flex justify-between items-center'>
                                             <span className='text-2xl font-semibold tracking-tighter'>{`$${el.price}`}</span>
                                             <div className='flex aling-center mr-2 my-1 lg:my-0 px-6 lg:px-4 py-3 u-beish-bg rounded-3xl'>
-                                                <i className='iconsax' icon-name='minus' onClick={() => {
-                                                    if (el.numberItems > 0) setCartItem(index, el, el.numberItems - 1);
-                                                }}>
-                                                </i>
-                                                <span className='px-2 lg:px-4 u-regular-font'>{el.numberItems}</span>
-                                                <i className='iconsax' icon-name='add' onClick={() => {
-                                                    setCartItem(index, el, el.numberItems + 1)
-                                                }}>
-                                                </i>
+                                                <span className='px-2 lg:px-4 u-regular-font'>{`Número de tems: ${el.numberItems}`}</span>
                                             </div>
                                         </div>
                                     </section>
