@@ -1,5 +1,4 @@
 {
-    "version": 30,
     "builds": [
         {
             "src": "./src/routes/index.js",
