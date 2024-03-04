@@ -21,7 +21,7 @@ const SearcherProducts: React.FC = () => {
                 if (name) endpoint = `search/${name}`;
                 else if (category) endpoint = `?category=${category}`;
 
-                const res = await fetch(`http://localhost:3000/api/products/${endpoint}`);
+                const res = await fetch(`https://west-pfrh4c77c-abrahams-projects-a43793ae.vercel.app/api/products/${endpoint}`);
                 if (!res.ok) throw new FetchDataError('The query failed');
                 const json = await res.json();
                 setDataArray(json);

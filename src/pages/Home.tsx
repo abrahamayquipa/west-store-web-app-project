@@ -10,8 +10,8 @@ const Home = () => {
         <>
             <MainArticle/>
             <MainArticleCarousel/>
-            <SwiperArticle title='NEW ARRIVALS' url='http://localhost:3000/api/products'/>
-            <SwiperArticle title='TOP SELLING' url='http://localhost:3000/api/products?category=4'/>
+            <SwiperArticle title='NEW ARRIVALS' url='https://west-pfrh4c77c-abrahams-projects-a43793ae.vercel.app/api/products'/>
+            <SwiperArticle title='TOP SELLING' url='https://west-pfrh4c77c-abrahams-projects-a43793ae.vercel.app/api/products?category=4'/>
             <Frames/>
             <CommentsArticle/>
             <Newsletter/>

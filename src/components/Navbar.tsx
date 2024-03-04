@@ -61,9 +61,7 @@ const Navbar: React.FC = () => {
                     }
                     <Searcher className='hidden sm:block col-start-3 col-end-6 sm:col-start-4 sm:col-end-11 lg:col-start-8 lg:col-end-12'/>
                     <section className='hidden lg:flex lg:col-start-12 lg:col-end-13 justify-evenly items-center'>
-                        
-                            <i className='iconsax' icon-name='basket-1' onClick={() => {handleShoppingCart()}}></i>
-                        
+                        <i className='iconsax' icon-name='basket-1' onClick={() => {handleShoppingCart()}}></i>
                         <i className='iconsax' icon-name='user-2-circle' onClick={() => {
                             toggleLogin();
                             if (getUserFromSession()) {
@@ -72,9 +70,7 @@ const Navbar: React.FC = () => {
                             }
                         }}></i>
                     </section>
-                    <NavLink to='/shopping-cart' onClick={handleHomeClick} className='col-start-6 col-end-7 sm:col-start-11 sm:col-end-12 lg:hidden justify-self-end self-center'>
-                        <i className='iconsax' icon-name='basket-1'></i>
-                    </NavLink>
+                    <i className='iconsax col-start-6 col-end-7 sm:col-start-11 sm:col-end-12 lg:hidden justify-self-end self-center' icon-name='basket-1'  onClick={() => {handleShoppingCart()}}></i>
                     <i className='iconsax col-start-7 col-end-8 sm:col-start-12 sm:col-end-13 lg:hidden justify-self-end self-center' icon-name='user-2-circle' onClick={toggleLogin}></i>
                 </div>
                 <ul className={`z-30 ${menuButton ? 'c-ul--contracted' : 'hidden'}`}>
