@@ -1,0 +1,42 @@
+```
+└── 📁src
+    └── 📁assets
+        └── 📁images
+    └── 📁components
+    └── 📁data
+        └── data.json
+    └── 📁documentation
+        └── project-structure.md
+    └── 📁errors
+        └── FetchCommentsError.ts
+        └── FetchDataError.ts
+    └── 📁logic
+        └── cart.ts
+        └── cartOperations.ts
+        └── Item.ts
+        └── loginSesion.ts
+    └── main.tsx
+    └── 📁pages
+        └── Error.tsx
+        └── Home.tsx
+        └── Product.tsx
+        └── SearcherProducts.tsx
+        └── ShoppingCart.tsx
+    └── 📁routes
+        └── index.js
+        └── product.mjs
+    └── 📁styles
+        └── 📁sass
+            └── 📁base
+                └── _base.scss
+                └── _variables.scss
+            └── 📁modules
+                └── _modules.scss
+            └── styles.scss
+            └── 📁utilities
+                └── _transitions.scss
+                └── _utilities.scss
+            └── 📁vendor
+                └── _vendor.scss
+    └── vite-env.d.ts
+```

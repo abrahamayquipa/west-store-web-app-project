@@ -46,15 +46,7 @@ const ShoppingCart = () => {
                                         <div className='flex justify-between items-center'>
                                             <span className='text-2xl font-semibold tracking-tighter'>{`$${el.price}`}</span>
                                             <div className='flex aling-center mr-2 my-1 lg:my-0 px-6 lg:px-4 py-3 u-beish-bg rounded-3xl'>
-                                                <i className='iconsax' icon-name='minus' onClick={() => {
-                                                    if (el.numberItems > 0) setCartItem(index, el, el.numberItems - 1);
-                                                }}>
-                                                </i>
-                                                <span className='px-2 lg:px-4 u-regular-font'>{el.numberItems}</span>
-                                                <i className='iconsax' icon-name='add' onClick={() => {
-                                                    setCartItem(index, el, el.numberItems + 1)
-                                                }}>
-                                                </i>
+                                                <span className='px-2 lg:px-4 u-regular-font'>{`Número de tems: ${el.numberItems}`}</span>
                                             </div>
                                         </div>
                                     </section>

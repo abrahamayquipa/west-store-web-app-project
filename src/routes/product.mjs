@@ -35,53 +35,40 @@ function findByCategoryId(categoryId, res) {
 }
 
 function sendResponse(data, res) {
-    if (data && data.length > 0) {
-        res.send(data);
-    } else {
-        res.status(404).send({ error: 'Product not found' });
-    }
+    if (data && data.length > 0) res.send(data);
+    else res.status(404).send({ error: 'Product not found' });
 }
 
 app.get('/products', (req, res) => {
-    const {
-        title,
-        rate,
-        price,
-        color,
-        priceMin,
-        priceMax,
-        category
-    } = req.query;
+    const { title, rate, price, color, priceMin, priceMax, category } = req.query;
 
-    if (title) {
-        findByTitle(title, res);
-    } else if (rate) {
-        findByRate(rate, res);
-    } else if (price) {
-        findByPrice(price, res);
-    } else if (color) {
-        findByColor(color, res);
-    }  else if (priceMin && priceMax) {
-        findByPriceRange(priceMin, priceMax, res);
-    } else if (category) {
-        findByCategoryId(category, res);
-    } else res.send(data);
+    if (title) findByTitle(title, res);
+    else if (rate) findByRate(rate, res);
+    else if (price) findByPrice(price, res);
+    else if (color) findByColor(color, res);
+    else if (priceMin && priceMax) findByPriceRange(priceMin, priceMax, res);
+    else if (category) findByCategoryId(category, res);
+    else res.send(data);
 });
 
 app.get('/products/:id', (req, res) => {
     const { id } = req.params;
     const product = data.find(product => product.id === parseInt(id));
-    if (!product) {
-        return res.status(404).send({ error: 'Product not found' });
-    }
+    if (!product) return res.status(404).send({ error: 'Product not found' });
+    res.send(product);
+});
+
+app.get('/products/search/:name', (req, res) => {
+    const { name } = req.params;
+    const decodedName = decodeURIComponent(name);
+    const product = data.find(product => product.title.toLowerCase() === decodedName);
+    if (!product) return res.status(404).send({error: 'Product not found'});
     res.send(product);
 });
 
 app.post('/products', (req, res) => {
     const { id, title, price, description } = req.body;
-    if (!id || !title || !price || !description) {
-        return res.status(400).send({ error: 'Request incomplete' });
-    }
+    if (!id || !title || !price || !description) return res.status(400).send({ error: 'Request incomplete' });
 
     const product = {
         id,
@@ -98,9 +85,8 @@ app.post('/products', (req, res) => {
 app.delete('/products/:id', (req, res) => {
     const { id } = req.params;
     const index = data.findIndex(product => product.id === parseInt(id));
-    if (index === -1) {
-        return res.status(404).send({ error: 'Product not found' });
-    }
+    if (index === -1) return res.status(404).send({ error: 'Product not found' });
+
     data.splice(index, 1);
     fs.writeFileSync('./src/data/data.json', JSON.stringify(data, null, 4));
     res.sendStatus(204);
@@ -109,14 +95,10 @@ app.delete('/products/:id', (req, res) => {
 app.put('/products/:id', (req, res) => {
     const { id } = req.params;
     const { title, price, description } = req.body;
-    if (!title || !price || !description) {
-        return res.status(400).send({ error: 'Request incomplete' });
-    }
+    if (!title || !price || !description) return res.status(400).send({ error: 'Request incomplete' });
 
     const index = data.findIndex(product => product.id === parseInt(id));
-    if (index === -1) {
-        return res.status(404).send({ error: 'Product not found' });
-    }
+    if (index === -1) return res.status(404).send({ error: 'Product not found' });
 
     data[index] = {
         ...data[index],

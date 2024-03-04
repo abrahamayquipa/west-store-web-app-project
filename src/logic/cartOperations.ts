@@ -13,7 +13,7 @@ const priceTotalItems = (arrayItems: Item[]) => {
 }
 
 const discount = (arrayItems: Item[]) => {
-    const result = priceTotalItems(arrayItems) * 0.10;
+    const result = priceTotalItems(arrayItems) * 0.20;
     return result;
 }
 
