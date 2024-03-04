@@ -25,6 +25,11 @@ const Navbar: React.FC = () => {
         }, 10)
     }
 
+    const handleShoppingCart = () => {
+        window.location.href = '/shopping-cart';
+        window.scrollTo(0, 0);
+    }
+
     return (
         <BrowserRouter>
             <nav className='h-16 sm:h-24 c-navbar-container'>
@@ -56,9 +61,9 @@ const Navbar: React.FC = () => {
                     }
                     <Searcher className='hidden sm:block col-start-3 col-end-6 sm:col-start-4 sm:col-end-11 lg:col-start-8 lg:col-end-12'/>
                     <section className='hidden lg:flex lg:col-start-12 lg:col-end-13 justify-evenly items-center'>
-                        <NavLink to='/shopping-cart' onClick={handleHomeClick}>
-                            <i className='iconsax' icon-name='basket-1'></i>
-                        </NavLink>
+                        
+                            <i className='iconsax' icon-name='basket-1' onClick={() => {handleShoppingCart()}}></i>
+                        
                         <i className='iconsax' icon-name='user-2-circle' onClick={() => {
                             toggleLogin();
                             if (getUserFromSession()) {
