@@ -9,7 +9,7 @@ const RatingStarts: React.FC<RatingStartsProps> = (props) => {
     const [value, setValue] = useState<number | null>(props.rate);
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number | null) => {
-        setValue(newValue);
+        if (event) setValue(newValue);
     };
 
     return (

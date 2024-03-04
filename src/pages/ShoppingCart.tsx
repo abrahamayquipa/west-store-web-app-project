@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { getCartItems, setCartItem, deleteCartItems } from '../logic/cart';
+import { getCartItems, deleteCartItems } from '../logic/cart';
 import { priceTotalItems, discount, finalPrice } from '../logic/cartOperations';
 import Newsletter from '../components/Newsletter';
 import Item from '../logic/Item';

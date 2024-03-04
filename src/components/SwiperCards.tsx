@@ -55,6 +55,9 @@ const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
                 },
             },
         });
+        return () => {
+			swiper.destroy();
+		};
     }, []);
 
     return (
