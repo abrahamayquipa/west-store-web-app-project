@@ -3,13 +3,6 @@ import productsRouter from './product.mjs';
 
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  next();
-});
-
 app.use('/api', productsRouter);
 
 app.listen(3000, () => {
