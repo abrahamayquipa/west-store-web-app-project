@@ -2,7 +2,7 @@ import express from 'express';
 import fs from 'fs';
 
 const app = express.Router();
-const data = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('../data/data.json', 'utf-8'));
 
 function findByTitle(title, res) {
     const product = data.filter(product => product.title === title);

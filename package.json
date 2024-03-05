@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "/api",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:css": "node-sass src/scss/main.scss -o dist/css && postcss --config postcss.config.cjs dist/css/main.css -o dist/css/main.min.css",
-    "start": "node index.js"
+    "start": "node /api"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

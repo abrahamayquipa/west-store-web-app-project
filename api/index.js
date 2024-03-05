@@ -1,5 +1,5 @@
 import express from 'express';
-import productsRouter from './server/api/product.mjs';
+import productsRouter from '../server/routes/product.mjs';
 
 const app = express();
 
