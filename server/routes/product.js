@@ -2,7 +2,7 @@ import express from 'express';
 import fs from 'fs';
 
 const app = express.Router();
-const data = JSON.parse(fs.readFileSync('../data/data.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 
 function findByTitle(title, res) {
     const product = data.filter(product => product.title === title);
@@ -64,51 +64,6 @@ app.get('/products/search/:name', (req, res) => {
     const product = data.find(product => product.title.toLowerCase() === decodedName);
     if (!product) return res.status(404).send({error: 'Product not found'});
     res.send(product);
-});
-
-app.post('/products', (req, res) => {
-    const { id, title, price, description } = req.body;
-    if (!id || !title || !price || !description) return res.status(400).send({ error: 'Request incomplete' });
-
-    const product = {
-        id,
-        title,
-        price,
-        description
-    };
-
-    data.push(product);
-    fs.writeFileSync('./src/data/data.json', JSON.stringify(data, null, 4));
-    res.status(201).send(product);
-});
-
-app.delete('/products/:id', (req, res) => {
-    const { id } = req.params;
-    const index = data.findIndex(product => product.id === parseInt(id));
-    if (index === -1) return res.status(404).send({ error: 'Product not found' });
-
-    data.splice(index, 1);
-    fs.writeFileSync('./src/data/data.json', JSON.stringify(data, null, 4));
-    res.sendStatus(204);
-});
-
-app.put('/products/:id', (req, res) => {
-    const { id } = req.params;
-    const { title, price, description } = req.body;
-    if (!title || !price || !description) return res.status(400).send({ error: 'Request incomplete' });
-
-    const index = data.findIndex(product => product.id === parseInt(id));
-    if (index === -1) return res.status(404).send({ error: 'Product not found' });
-
-    data[index] = {
-        ...data[index],
-        title,
-        price,
-        description
-    };
-
-    fs.writeFileSync('./src/data/data.json', JSON.stringify(data, null, 4));
-    res.send(data[index]);
 });
 
 export default app;
