@@ -29,7 +29,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
 
         const fetchData = async () => {
             try {
-                const res = await fetch(`https://west-pfrh4c77c-abrahams-projects-a43793ae.vercel.app/api/products/${props.id}`);
+                const res = await fetch(`https://west-store-backend.onrender.com/api/products/${props.id}`);
                 if (!res.ok) throw new FetchDataError('The query failed');
                 const json = await res.json();
                 setData(json);

@@ -18,10 +18,10 @@ const SearcherProducts: React.FC = () => {
         const fetchData = async () => {
             try {
                 let endpoint = '';
-                if (name) endpoint = `search/${name}`;
+                if (name) endpoint = `/search/${name}`;
                 else if (category) endpoint = `?category=${category}`;
 
-                const res = await fetch(`https://west-pfrh4c77c-abrahams-projects-a43793ae.vercel.app/api/products/${endpoint}`);
+                const res = await fetch(`https://west-store-backend.onrender.com/api/products${endpoint}`);
                 if (!res.ok) throw new FetchDataError('The query failed');
                 const json = await res.json();
                 setDataArray(json);

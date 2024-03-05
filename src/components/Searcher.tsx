@@ -12,7 +12,7 @@ const Searcher: React.FC<SearcherProps> = (props) => {
     }
 
     const handleSearch = () => {
-        window.location.href = `/product/search/${encodeURIComponent(desiredProduct).toLowerCase()}`;
+        window.location.href = `/products/search/${encodeURIComponent(desiredProduct).toLowerCase()}`;
     }
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
