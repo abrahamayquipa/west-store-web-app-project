@@ -1,14 +1,7 @@
 import express from 'express';
-import productsRouter from './product.mjs';
+import productsRouter from '../api/product.mjs';
 
 const app = express();
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  next();
-});
 
 app.use('/api', productsRouter);
 
