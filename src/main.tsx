@@ -17,10 +17,10 @@ root.render (
     <Navbar />
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/product/:id' element={<Product />} />
-        <Route path='/shopping-cart' element={<ShoppingCart />} />
-        <Route path='/product/search/:name?' element={<SearcherProducts />} />
+        <Route path='https://west-store-web-app-project-9xu3sdw5n-abrahams-projects-a43793ae.vercel.app/' element={<Home />} />
+        <Route path='https://west-store-web-app-project-9xu3sdw5n-abrahams-projects-a43793ae.vercel.app/product/:id' element={<Product />} />
+        <Route path='https://west-store-web-app-project-9xu3sdw5n-abrahams-projects-a43793ae.vercel.app/shopping-cart' element={<ShoppingCart />} />
+        <Route path='https://west-store-web-app-project-9xu3sdw5n-abrahams-projects-a43793ae.vercel.app/product/search/:name?' element={<SearcherProducts />} />
         <Route path='*' element={<Error404 />} />
       </Routes>
     </BrowserRouter>
