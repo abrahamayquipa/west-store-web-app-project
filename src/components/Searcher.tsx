@@ -22,7 +22,7 @@ const Searcher: React.FC<SearcherProps> = (props) => {
     return (
         <div className={`my-5 c-searcher ${props.className} u-beish-bg`} onChange={desiredProductFunction} onKeyUp={handleKeyPress}>
             <i className='iconsax' icon-name='search-normal-2' onClick={handleSearch}></i>
-            <input type='text' placeholder='Search for products...' className='mx-4 c-searcher__input u-beish-bg'/>
+            <input type='text' placeholder='Busca tu producto...' className='mx-4 c-searcher__input u-beish-bg'/>
         </div>
     );
 }

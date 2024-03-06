@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <section className='container mx-auto px-8 md:grid gap-8 md:grid-cols-12'>
                 <section className='flex flex-col mb-4 md:col-start-1 md:col-end-4'>
                     <span className='u-extra-bold-font text-3xl'>WEST.CO</span>
-                    <span className='u-regular-font my-2 md:my-4'>We have clothes that suits your style and which you’re proud to wear. From women to men.</span>
+                    <span className='u-regular-font my-2 md:my-4'>Tenemos ropa que se adapta a tu estilo y que estarás orgulloso de usar. De mujeres a hombres.</span>
                     <div>
                         <i className='iconsax mx-1' icon-name='maximize-2'></i>
                         <i className='iconsax mx-1' icon-name='grammarly'></i>
@@ -21,39 +21,39 @@ const Footer: React.FC = () => {
                 </section>
                 <section className='flex flex-row flex-wrap justify-between md:col-start-5 md:col-end-13'>
                         <section className='w-2/5 md:w-1/4 mb-4 md:mb-0'>
-                            <span className='text-xl font-bold'>COMPANY</span>
+                            <span className='text-xl font-bold'>EMPRESA</span>
                             <ul>
-                                <li className='u-regular-font my-1'>About</li>
-                                <li className='u-regular-font my-1'>Features</li>
-                                <li className='u-regular-font my-1'>Works</li>
-                                <li className='u-regular-font my-1'>Carrer</li>
+                                <li className='u-regular-font my-1'>Acerca de</li>
+                                <li className='u-regular-font my-1'>Caracteristicas</li>
+                                <li className='u-regular-font my-1'>Trabajo</li>
+                                <li className='u-regular-font my-1'>Carreras</li>
                             </ul>
                         </section>
                         <section className='w-2/5 md:w-1/4 mb-4 md:mb-0'>
                             <span className='text-xl font-bold'>FAQ</span>
                             <ul>
-                                <li className='u-regular-font my-1'>Account</li>
-                                <li className='u-regular-font my-1'>Nanage Deliveries</li>
-                                <li className='u-regular-font my-1'>Orders</li>
-                                <li className='u-regular-font my-1'>Payment</li>
+                                <li className='u-regular-font my-1'>Cuenta</li>
+                                <li className='u-regular-font my-1'>Delivery</li>
+                                <li className='u-regular-font my-1'>Ordenes</li>
+                                <li className='u-regular-font my-1'>Pagos</li>
                             </ul>
                         </section>
                         <section className='w-2/5 md:w-1/4'>
-                            <span className='text-xl font-bold'>HELP</span>
+                            <span className='text-xl font-bold'>AYUDA</span>
                             <ul>
-                                <li className='u-regular-font my-1'>Costumer Support</li>
-                                <li className='u-regular-font my-1'>Delivery Details</li>
-                                <li className='u-regular-font my-1'>Terms & Conditions</li>
-                                <li className='u-regular-font my-1'>Privacy Policy</li>
+                                <li className='u-regular-font my-1'>Servicio al cliente</li>
+                                <li className='u-regular-font my-1'>Detalles del delivery</li>
+                                <li className='u-regular-font my-1'>Terminos y condiciones</li>
+                                <li className='u-regular-font my-1'>Politica de privacidad</li>
                             </ul>
                         </section>
                         <section className='w-2/5 md:w-1/4'>
-                            <span className='text-xl font-bold'>RESOURCES</span>
+                            <span className='text-xl font-bold'>RECURSOS</span>
                             <ul>
-                                <li className='u-regular-font my-1'>Free e-Book</li>
-                                <li className='u-regular-font my-1'>Development Tutorial</li>
-                                <li className='u-regular-font my-1'>How to - Blog</li>
-                                <li className='u-regular-font my-1'>Youtube Playsit</li>
+                                <li className='u-regular-font my-1'>e-Book gratuito</li>
+                                <li className='u-regular-font my-1'>Tutorial de desarrollo</li>
+                                <li className='u-regular-font my-1'>Blog</li>
+                                <li className='u-regular-font my-1'>Playsit Youtube</li>
                             </ul>
                         </section>
                 </section>

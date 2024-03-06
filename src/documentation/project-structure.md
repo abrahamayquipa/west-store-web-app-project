@@ -2,9 +2,45 @@
 └── 📁src
     └── 📁assets
         └── 📁images
+            └── adidas-logo.png
+            └── apple-pay-badge.png
+            └── casual-frame.png
+            └── champions-logo.png
+            └── fila-logo.png
+            └── formal-frame.png
+            └── google-pay-badge.png
+            └── gym-frame.png
+            └── mastercard-badge.png
+            └── models.png
+            └── nike-logo.png
+            └── party-frame.png
+            └── paypal-badge.png
+            └── puma-logo.png
+            └── reebok-logo.png
+            └── visa-badge.png
     └── 📁components
-    └── 📁data
-        └── data.json
+        └── Card.tsx
+        └── Comment.tsx
+        └── CommentsArticle.tsx
+        └── DiscountLabel.tsx
+        └── Dropdown.tsx
+        └── Footer.tsx
+        └── Frames.tsx
+        └── Login.tsx
+        └── MainArticle.tsx
+        └── MainArticleCarousel.tsx
+        └── Navbar.tsx
+        └── Newsletter.tsx
+        └── ProducDetails.tsx
+        └── RatingStarts.tsx
+        └── Searcher.tsx
+        └── SearcherTextField.tsx
+        └── ShadowWindow.tsx
+        └── SwiperArticle.tsx
+        └── SwiperCards.tsx
+        └── SwiperCommentsArticle.tsx
+        └── SwiperMainArticle.tsx
+        └── UseFetchData.tsx
     └── 📁documentation
         └── project-structure.md
     └── 📁errors
@@ -22,9 +58,6 @@
         └── Product.tsx
         └── SearcherProducts.tsx
         └── ShoppingCart.tsx
-    └── 📁routes
-        └── index.js
-        └── product.mjs
     └── 📁styles
         └── 📁sass
             └── 📁base

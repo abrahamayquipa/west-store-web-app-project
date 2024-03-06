@@ -8,7 +8,10 @@
     <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/abrahamayquipa/west-store-web-app-project">
     <img alt="Static Badge" src="https://img.shields.io/badge/license-MIT-yellow">
 </div>
-<p align="center">You want to see the proyect? then clone this repository</p>
+<p align="center">
+You want to see the proyect? then clone this repository
+</p>
+<p align="center">Backend: https://github.com/abrahamayquipa/west-store-backend</p>
 
 ## 📚​Table of content
 - [📚​Table of content](#table-of-content)

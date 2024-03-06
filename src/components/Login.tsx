@@ -51,7 +51,7 @@ const Login: React.FC = () => {
                                         <i className='iconsax' icon-name='mail'></i>
                                         <input
                                             type='text'
-                                            placeholder='Enter your email address'
+                                            placeholder='Ingresa tu correo electronico'
                                             className='mx-4 c-searcher__input u-beish-bg'
                                             value={email}
                                             onChange={handleEmailChange}
@@ -61,7 +61,7 @@ const Login: React.FC = () => {
                                         <i className='iconsax' icon-name='lock-1'></i> 
                                         <input
                                             type={showPassword ? 'text' : 'password'}
-                                            placeholder='Enter your password'
+                                            placeholder='Ingresa tu contraseña'
                                             className='w-2/3 mx-4 bg-transparent outline-none'
                                             value={password}
                                             onChange={handlePasswordChange}

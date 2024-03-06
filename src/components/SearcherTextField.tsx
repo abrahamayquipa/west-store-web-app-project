@@ -19,7 +19,7 @@ const SearcherTextField: React.FC = () => {
         <div className='c-searcher__container'>
             <div className='mx-4 my-4 c-searcher'>
                 <i className='iconsax' icon-name='search-normal-2' onClick={handleSearch} onKeyUp={handleKeyPress}></i>
-                <input type='text' placeholder='Search for products...' className='mx-2 c-searcher__input' onChange={desiredProductFunction} />
+                <input type='text' placeholder='Busca tu producto...' className='mx-2 c-searcher__input' onChange={desiredProductFunction} />
             </div>
         </div>
     );

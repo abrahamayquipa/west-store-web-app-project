@@ -7,7 +7,7 @@ const Frames: React.FC = () => {
         <section className='u-beish-bg py-1'>
             <section className='container mx-auto my-16  px-8'>
                 <section className='text-center'>
-                    <span className='text-5xl u-extra-bold-font'>BROWSE BY DRESS STYLE</span>
+                    <span className='text-5xl u-extra-bold-font'>ENCUENTRA TU ESTILO</span>
                 </section>
                 <section>
                     <section className='flex flex-col sm:flex-row justify-center '>

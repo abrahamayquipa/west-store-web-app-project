@@ -108,7 +108,7 @@ const SearcherProducts: React.FC = () => {
                 </section>
             ) : (
                 <article className='container flex px-8 mx-auto my-16 sm:my-52'>
-                    <span className='text-6xl text-center m-auto u-extra-bold-font'>The product doesn't exist😭</span>
+                    <span className='text-6xl text-center m-auto u-extra-bold-font'>El producto no existe😭</span>
                 </article>
             )}
         </article>

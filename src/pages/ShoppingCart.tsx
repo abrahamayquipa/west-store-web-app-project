@@ -29,7 +29,7 @@ const ShoppingCart = () => {
     return (
         <>
             <article className='container mx-auto px-8 mt-24'>
-                <h1 className='text-5xl u-extra-bold-font'>YOUR CART</h1>
+                <h1 className='text-5xl u-extra-bold-font'>CARRITO DE COMPRAS</h1>
                 {arrayItems.length > 0 ? (
                     <section className='grid grid-cols-7 lg:grid-cols-12 gap-4 mt-8 lg:mb-16'>
                         <ul className='col-span-8 mb-0'>
@@ -41,7 +41,7 @@ const ShoppingCart = () => {
                                             <span className='text-xl lg:text-2xl font-semibold tracking-tighter'>{el.title}</span>
                                             <i className='iconsax' icon-name='trash' onClick={() => handleDeleteCartItem(index)}></i>
                                         </div>
-                                        <span className='u-regular-font mt-2'>Size: {el.size}</span>
+                                        <span className='u-regular-font mt-2'>Talla: {el.size}</span>
                                         <span className='u-regular-font'>Color: {el.color}</span>
                                         <div className='flex justify-between items-center'>
                                             <span className='text-2xl font-semibold tracking-tighter'>{`$${el.price}`}</span>
@@ -54,7 +54,7 @@ const ShoppingCart = () => {
                             ))}
                         </ul>
                         <section className='flex flex-col mb-8 lg:mb-0 col-span-7 lg:col-span-4'>
-                            <span className='mb-2 lg:mb-6 text-3xl font-bold'>Order sumary</span>
+                            <span className='mb-2 lg:mb-6 text-3xl font-bold'>Resumen del pedido</span>
                             <div className='flex justify-between items-center'>
                                 <div className='flex items-center'>
                                     <i className='iconsax' icon-name='bank-card'></i>
@@ -65,7 +65,7 @@ const ShoppingCart = () => {
                             <div className='flex justify-between items-center my-1'>
                                 <div className='flex items-center'>
                                     <i className='iconsax' icon-name='discount-badge'></i>
-                                    <span className='ml-1 u-regular-font'>Discount(-20%)</span>
+                                    <span className='ml-1 u-regular-font'>Descuento(-20%)</span>
                                 </div>
                                 <span className='text-xl text-rose-500 font-semibold tracking-tighter'>{`-$${discount(arrayItems).toFixed(2)}`}</span>
                             </div>
@@ -91,7 +91,7 @@ const ShoppingCart = () => {
                     </section>
                 ) : (
                     <article className='container flex px-8 mx-auto my-32'>
-                        <span className='text-6xl text-center m-auto u-extra-bold-font'>There isn't any product in your cart😭</span>
+                        <span className='text-6xl text-center m-auto u-extra-bold-font'>No tienes ningún producto en tu carro😭</span>
                     </article>
                 )}
             </article>

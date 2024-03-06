@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
                     </span>
                     <ul className='hidden lg:flex lg:col-start-3 lg:col-end-8 xl:col-start-2 justify-evenly items-center'>
                         <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Home</NavLink></li>
-                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Top selling</NavLink></li>
-                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> New Arrivals</NavLink></li>
-                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Your Style</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Más vendidos</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Nuevos lotes</NavLink></li>
+                        <li><NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Tu estilo</NavLink></li>
                     </ul>
                     {
                         searcherButton
@@ -83,15 +83,15 @@ const Navbar: React.FC = () => {
                     </li>
                     <li className='c-navbar__li'>
                         <i className='iconsax' icon-name='tag-2'></i>
-                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> On Sale</NavLink>
+                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Mas vendidos</NavLink>
                     </li>
                     <li className='c-navbar__li'>
                         <i className='iconsax' icon-name='box-tick'></i>
-                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> New Arrivals</NavLink>
+                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Nuevos lotes</NavLink>
                     </li>
                     <li className='c-navbar__li'>
                         <i className='iconsax' icon-name='building-2'></i>
-                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Brands</NavLink>
+                        <NavLink to='/' className='u-regular-font' onClick={handleHomeClick}> Marcas</NavLink>
                     </li>
                 </ul>
                 {
