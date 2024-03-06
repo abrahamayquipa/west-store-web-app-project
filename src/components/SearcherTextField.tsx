@@ -8,7 +8,7 @@ const SearcherTextField: React.FC = () => {
     }
 
     const handleSearch = () => {
-        window.location.href = `/products/search/${encodeURIComponent(desiredProduct).toLowerCase()}`;
+        window.location.href = `/product/search/${encodeURIComponent(desiredProduct).toLowerCase()}`;
     }
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
