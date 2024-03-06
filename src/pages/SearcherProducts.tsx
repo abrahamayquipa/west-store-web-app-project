@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -13,6 +13,7 @@ const SearcherProducts: React.FC = () => {
     const { name } = useParams();
     const location = useLocation();
     const category = new URLSearchParams(location.search).get('category');
+    const swiperRef = useRef<Swiper | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,42 +36,44 @@ const SearcherProducts: React.FC = () => {
     }, [name, category]);
 
     useEffect(() => {
-        const swiper = new Swiper('.swiper-clothe-cards', {
-            modules: [Navigation, Pagination],
-            direction: 'horizontal',
-            loop: true,
-            allowTouchMove: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                200: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
+        if (dataArray.length > 0) {
+            swiperRef.current = new Swiper('.swiper-clothe-cards', {
+                modules: [Navigation, Pagination],
+                direction: 'horizontal',
+                loop: true,
+                allowTouchMove: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
                 },
-                450: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 },
-                800: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
+                breakpoints: {
+                    200: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    450: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    800: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    1000: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    1500: {
+                        slidesPerView: 6,
+                        spaceBetween: 25,
+                    },
                 },
-                1000: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                },
-                1500: {
-                    slidesPerView: 6,
-                    spaceBetween: 25,
-                },
-            },
-        });
+            });
+        }
     }, [dataArray]);
 
     return (
