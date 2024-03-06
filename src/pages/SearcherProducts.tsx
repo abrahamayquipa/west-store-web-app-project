@@ -71,9 +71,6 @@ const SearcherProducts: React.FC = () => {
                 },
             },
         });
-        return () => {
-			swiper.destroy();
-		};
     }, [dataArray]);
 
     return (

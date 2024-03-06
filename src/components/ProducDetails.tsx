@@ -74,8 +74,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                 <section className='lg:my-auto lg:ml-4 lg:w-4/6'>
                     <h1 className='text-4xl lg:text-7xl u-extra-bold-font'>{data.title && data.title.toUpperCase()}</h1>
                     <section className='flex flex-col my-2'>
-                        <span className='u-regular-font'>{`Creation at: ${data.creationAt}`}</span>
-                        <span className='u-regular-font'>{`Update at: ${data.updatedAt}`}</span>
+                        <span className='u-regular-font'>{`Fecha de creación ${data.creationAt}`}</span>
+                        <span className='u-regular-font'>{`Fecha de actualización: ${data.updatedAt}`}</span>
                     </section>
                     <section className='flex my-2'>
                         {data.rate && (
@@ -96,7 +96,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                     </section>
                     {data.description && <p className='my-2 u-regular-font'>{data.description}</p>}
                     <section className='mt-4'>
-                        <span className='u-regular-font'>{`Select color: ${color}`}</span>
+                        <span className='u-regular-font'>{`Seleccionar el color: ${color}`}</span>
                         <section className='flex flex-wrap'>
                             {[{ name: 'brown', color: '#4F4631' }, { name: 'green', color: '#314F4A' }, { name: 'purple', color: '#31344F' }, { name: 'beish', color: '#E5E2D8' }, { name: 'pink', color: '#FAC6C6' }].map(({ name, color }, index) => (
                                 <div key={index} className='mr-2 c-circle__back flex' onClick={() => { setColor(name) }}>
@@ -106,7 +106,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                         </section>
                     </section>
                     <section className='mt-4'>
-                        <span className='u-regular-font'>{`Choose Size: ${size}`}</span>
+                        <span className='u-regular-font'>{`Elegir talla: ${size}`}</span>
                         <section className='flex flex-wrap'>
                             {['sm', 'md', 'lg', 'xl'].map((value, index) => (
                                 <div key={index} className={`my-1 mr-2 px-6 py-2 rounded-3xl ${size === value ? 'bg-black text-white' : 'u-beish-bg'}`} onClick={() => setSize(value)}>
@@ -123,7 +123,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
                         </div>
                         <div className='w-full ml-2 py-4 text-white text-center bg-black rounded-3xl' onClick={handleNotifications}>
                             <Toaster />
-                            <input type='button' value='Add to cart' />
+                            <input type='button' value='Agregar al carrito' />
                         </div>
                     </section>
                 </section>

@@ -26,7 +26,7 @@ const Newsletter: React.FC = () => {
                     </div>
                     <input
                         type='button'
-                        value='Subscribe to Newsletter'
+                        value='Subscrirse a la newsletter'
                         className='p-4 bg-white rounded-full w-full u-regular-font'
                         onClick={validateInput}
                     />
