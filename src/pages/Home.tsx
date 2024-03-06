@@ -10,8 +10,8 @@ const Home = () => {
         <>
             <MainArticle/>
             <MainArticleCarousel/>
-            <SwiperArticle title='NEW ARRIVALS' url='https://west-store-backend.onrender.com/api/products'/>
-            <SwiperArticle title='TOP SELLING' url='https://west-store-backend.onrender.com/api/products?category=4'/>
+            <SwiperArticle title='NUEVOS LOTES' url='https://west-store-backend.onrender.com/api/products'/>
+            <SwiperArticle title='MAS VENDIDOS' url='https://west-store-backend.onrender.com/api/products?category=4'/>
             <Frames/>
             <CommentsArticle/>
             <Newsletter/>

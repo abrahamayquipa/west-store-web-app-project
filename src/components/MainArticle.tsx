@@ -16,7 +16,7 @@ const MainArticle: React.FC = () => {
                     <section className='flex flex-wrap lg:pb-15'>
                         <section className='flex flex-col m-2'>
                             <span className='text-4xl u-bold-font'>200+</span>
-                            <span className='u-regular-font'>Marcas internacionales</span>
+                            <span className='u-regular-font'>Marcas</span>
                         </section>
                         <hr />
                         <section className='flex flex-col m-2'>

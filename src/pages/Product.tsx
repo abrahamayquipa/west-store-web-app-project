@@ -13,7 +13,7 @@ const Product: React.FC = () => {
         <>
             <ProductDetails id={parseInt(id)} />
             <CommentsArticle />
-            <SwiperArticle title='YOU MIGHT ALSO LIKE' url='https://west-store-backend.onrender.com/api/products?category=4' />
+            <SwiperArticle title='TAMBIEN TE PUEDE GUSTAR' url='https://west-store-backend.onrender.com/api/products?category=4' />
             <Newsletter />
         </>
     )
