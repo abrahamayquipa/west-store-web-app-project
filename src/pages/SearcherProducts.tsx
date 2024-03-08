@@ -10,6 +10,7 @@ import FetchDataError from '../errors/FetchDataError';
 const SearcherProducts: React.FC = () => {
     const [dataArray, setDataArray] = useState<any>([]);
     const [dataObj, setDataObj] = useState<any>({});
+    const [isEmpty, setIsEmpty] = useState(false);
     const { name } = useParams();
     const location = useLocation();
     const category = new URLSearchParams(location.search).get('category');
@@ -19,8 +20,15 @@ const SearcherProducts: React.FC = () => {
         const fetchData = async () => {
             try {
                 let endpoint = '';
-                if (name) endpoint = `search/${name}`;
-                else if (category) endpoint = `?category=${category}`;
+                if (endpoint === '') setIsEmpty(false);
+                if (name) {
+                    endpoint = `search/${name}`;
+                    setIsEmpty(true);
+                }
+                else if (category) {
+                    endpoint = `?category=${category}`;
+                    setIsEmpty(true);
+                }
 
                 const res = await fetch(`https://west-store-backend.onrender.com/api/products/${endpoint}`);
                 if (!res.ok) throw new FetchDataError('The query failed');
@@ -107,9 +115,15 @@ const SearcherProducts: React.FC = () => {
                     )}
                 </section>
             ) : (
-                <article className='container flex px-8 mx-auto my-16 sm:my-52'>
-                    <span className='text-6xl text-center m-auto u-extra-bold-font'>El producto no existe😭</span>
-                </article>
+                isEmpty ? (
+                    <article className='container flex px-8 mx-auto my-16 sm:my-52'>
+                        <span className='text-6xl text-center m-auto u-extra-bold-font'>El producto no existe😭</span>
+                    </article>
+                ) : (
+                    <article className='container flex px-8 mx-auto my-16 sm:my-40'>
+                        <span className='loader mx-auto'></span>
+                    </article>
+                )
             )}
         </article>
     )

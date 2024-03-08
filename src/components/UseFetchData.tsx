@@ -25,7 +25,13 @@ const UseFetchData: React.FC<UseFetchDataProps> = (props) => {
     }, [])
 
     return (
-        <SwiperCards carouselImages={data}/>
+        data.length > 0 ?
+            (<SwiperCards carouselImages={data}/>)
+        : (
+            <article className='container flex px-8 mx-auto my-32'>
+                <span className='loader mx-auto'></span>
+            </article>
+        )
     )
 }
 
