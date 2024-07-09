@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from 'react';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import Card from "./Card";
+
+const Card = lazy(() => import("./Card"));
 
 type SwiperCardsProps = {
     carouselImages: {
@@ -65,9 +66,11 @@ const SwiperCards: React.FC<SwiperCardsProps> = (props) => {
             <section className='flex swiper-wrapper'>
                 {props.carouselImages.map((el) => (
                     <div className='swiper-slide' key={el.id}>
-                        {el.images && el.images.length > 0 && (
-                            <Card id={el.id} image={el.images[0]} name={el.title} rate={el.rate} currentPrice={el.price.currentPrice} oldPrice={el.price.oldPrice} discount={el.price. discount} />
-                        )}
+                        <Suspense fallback={<span></span>}>
+                            {el.images && el.images.length > 0 && (
+                                <Card id={el.id} image={el.images[0]} name={el.title} rate={el.rate} currentPrice={el.price.currentPrice} oldPrice={el.price.oldPrice} discount={el.price.discount} />
+                            )}
+                        </Suspense>
                     </div>
                 ))}
             </section>
