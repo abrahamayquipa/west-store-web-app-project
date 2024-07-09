@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
 import Swiper from 'swiper';
-import { Autoplay } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import adidas from '../assets/images/adidas-logo.png';
 import chamnpions from '../assets/images/champions-logo.png';
@@ -65,40 +66,40 @@ const SwiperMainArticle: React.FC = () => {
         <div className="custom-swiper">
             <div className="swiper-wrapper">
                 <div className="swiper-slide">
-                    <img src={adidas} alt="adidas" />
+                    <LazyLoadImage src={adidas} alt="adidas" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={chamnpions} alt="champions" />
+                    <LazyLoadImage src={chamnpions} alt="champions" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={fila} alt="fila" />
+                    <LazyLoadImage src={fila} alt="fila" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={nike} alt="nike" />
+                    <LazyLoadImage src={nike} alt="nike" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={puma} alt="puma" />
+                    <LazyLoadImage src={puma} alt="puma" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={reebok} alt="reebook" />
+                    <LazyLoadImage src={reebok} alt="reebook" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={adidas} alt="adidas" />
+                    <LazyLoadImage src={adidas} alt="adidas" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={chamnpions} alt="champions" />
+                    <LazyLoadImage src={chamnpions} alt="champions" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={fila} alt="fila" />
+                    <LazyLoadImage src={fila} alt="fila" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={nike} alt="nike" />
+                    <LazyLoadImage src={nike} alt="nike" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={puma} alt="puma" />
+                    <LazyLoadImage src={puma} alt="puma" />
                 </div>
                 <div className="swiper-slide">
-                    <img src={reebok} alt="reebook" />
+                    <LazyLoadImage src={reebok} alt="reebook" />
                 </div>
             </div>
         </div>

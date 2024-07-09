@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import RatingStarts from './RatingStarts';
 import DiscountLabel from './DiscountLabel';
@@ -24,7 +25,7 @@ const Card: React.FC<CardProps> = (props) => {
         <Link to={`/product/${props.id}`}>
             <section className='flex flex-col c-card' onClick={reloadPage}>
                 <div>
-                    <img src={props.image} alt={props.image} className='c-main-article__image' />
+                    <LazyLoadImage src={props.image} alt={props.image} className='c-main-article__image' />
                 </div>
                 <div className='flex flex-col items-start justify-between'>
                     <span className='text-start text-2xl font-semibold tracking-tighter mt-2 w-full text-nowrap text-ellipsis overflow-hidden'>{props.name}</span>
